@@ -1,0 +1,2 @@
+import IOthread
+print('out')

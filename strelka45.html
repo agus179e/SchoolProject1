@@ -1,0 +1,23 @@
+<html>
+<body>
+<canvas id=canvas width=500 height=500></canvas>
+<script>
+function inRad(num) {
+	return num * Math.PI / 180;
+}
+
+var rectX = 100, rectY = 100, rectW = 100, rectH = 100, rectAngle = 45;
+
+var cnv = document.getElementById('canvas');
+var ctx = cnv.getContext('2d');	
+pic= new Image();              // "Создаём" изображение
+      pic.src    = 'strelka.jpg';  // Источник изображения, позаимствовано на хабре
+      pic.onload = function() {
+	ctx.translate(rectX, rectY);
+	ctx.rotate(inRad(22));    // Событие onLoad, ждём момента пока загрузится изображение
+        ctx.drawImage(pic, 55, 0);  // Рисуем изображение от точки с координатами 0, 0
+      }
+
+</script>
+</body>
+</html>
